@@ -1,7 +1,7 @@
 const defaults = {
   /* Default pageInfo object, used if user does not specify their own */
   pageInfo: {
-    title: 'Dashy',
+    title: '见外工具集',
     description: '',
     navLinks: [],
     footer: '',
@@ -9,7 +9,7 @@ const defaults = {
   /* Default appConfig to be used, if user does not specify their own */
   appConfig: {},
   /* Default language code */
-  language: 'en',
+  language: 'zh-CN',
   /* The page to use as the starting homepage */
   startingView: 'default',
   /* Default icon size to be applied on initial load */

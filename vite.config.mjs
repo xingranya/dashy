@@ -37,8 +37,9 @@ function copyUserDataConfig() {
     closeBundle() {
       const outDir = path.resolve(__dirname, 'dist');
       if (!existsSync(userDataDir)) return;
-      const ymlFiles = readdirSync(userDataDir).filter(f => f.endsWith('.yml') || f.endsWith('.yaml'));
-      for (const file of ymlFiles) {
+      const brandFiles = ['seeway-logo.svg', 'seeway-mark.svg', 'logo.png', 'favicon.ico'];
+      const files = readdirSync(userDataDir).filter(f => /\.ya?ml$/.test(f) || brandFiles.includes(f));
+      for (const file of files) {
         const src = path.join(userDataDir, file);
         const dest = path.join(outDir, file);
         copyFileSync(src, dest);
@@ -58,14 +59,13 @@ export default defineConfig({
       registerType: 'prompt',
       useCredentials: true,
       manifest: {
-        name: 'Dashy',
-        theme_color: '#00af87',
-        background_color: '#0b1021',
+        name: '见外工具集',
+        short_name: '见外工具集',
+        lang: 'zh-CN',
+        theme_color: '#0ea5e9',
+        background_color: '#f6f8fa',
         icons: [
-          { src: '/web-icons/favicon-64x64.png', sizes: '64x64', type: 'image/png' },
-          { src: '/web-icons/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-          { src: '/web-icons/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-          { src: '/web-icons/dashy-logo.png', sizes: '512x512', type: 'image/png' },
+          { src: '/seeway-mark.svg', sizes: 'any', type: 'image/svg+xml' },
         ],
       },
       workbox: {

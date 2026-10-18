@@ -5,7 +5,7 @@
       ref="SearchBar"
       @user-is-searchin="userIsTypingSomething"
     />
-    <div class="options-outer" v-click-outside="closePanel">
+    <div v-if="$store.getters.visibleComponents.settings" class="options-outer" v-click-outside="closePanel">
       <button
         type="button"
         class="options-trigger"

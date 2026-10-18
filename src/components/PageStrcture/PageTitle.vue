@@ -1,7 +1,7 @@
 <template>
   <router-link to="/" class="page-titles" :disabled="isEditMode">
     <!-- Optional page logo image -->
-    <img v-if="logo" :src="logo" class="site-logo" />
+    <img v-if="logo" :src="logo" :alt="title" class="site-logo" />
     <!-- Page heading and sub-heading -->
     <div class="text">
       <h1>{{ title }}</h1>

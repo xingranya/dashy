@@ -5,7 +5,7 @@
 import { makePageName, viewFromPath } from '@/utils/config/ConfigHelpers';
 import ErrorHandler from '@/utils/logging/ErrorHandler';
 
-const FALLBACK_TITLE = 'Dashy';
+const FALLBACK_TITLE = '见外工具集';
 
 export const VIEW_LABELS = { home: null, minimal: 'Minimal', workspace: 'Workspace' };
 

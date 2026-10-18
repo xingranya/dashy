@@ -1,7 +1,8 @@
 <template>
  <transition name="slide-fade">
   <div id="loading" v-if="isLoading" :class="c" @click="c = 'hide'">
-    <h2>Dashy</h2>
+    <img :src="'/seeway-mark.svg'" alt="见外 SEEWAY" width="64" height="64" />
+    <h2>见外工具集</h2>
     <div class="inner-container">
       <p>{{ $t('splash-screen.loading')}}</p>
       <span class="dots-cont">
@@ -47,14 +48,13 @@ div#loading {
   }
 
   p {
-    font-size: 6vw;
+    font-size: 1rem;
     display: inline;
     margin: 0 auto;
   }
   h2 {
-    opacity: 0.35;
-    font-size: 16vw;
-    margin: 0;
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    margin: 1rem 0;
   }
 
   .dots-cont {
