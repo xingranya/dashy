@@ -17,6 +17,8 @@
       @mouseup.right="openRightClickMenu" @contextmenu="preventNativeContextMenu"
       @long-press="openRightClickMenu" v-longPress="500">
       <label :for="sectionKey" class="collapse-toggle"
+        role="button" tabindex="0" :aria-expanded="checkboxState"
+        @keydown.enter.prevent="toggle" @keydown.space.prevent="toggle"
         v-tooltip="toggleTooltip()" :aria-label="$t('context-menus.section.expand-collapse')">
         <span class="arrow" aria-hidden="true"></span>
       </label>
@@ -30,7 +32,7 @@
       <EllipseIcon @click.prevent.stop="openContextMenu" @contextmenu="preventNativeContextMenu"
         v-tooltip="optionsTooltip()" class="header-action" />
     </div>
-    <div class="collapsible-content">
+    <div class="collapsible-content" :inert="!checkboxState" :aria-hidden="!checkboxState">
       <div class="content-inner">
         <slot></slot>
         </div>

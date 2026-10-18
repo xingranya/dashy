@@ -25,7 +25,7 @@
       </div>
       <!-- Item Icon -->
       <Icon :icon="itemIcon" :url="item.url" :size="size" :color="item.color"
-        v-bind:style="customStyles" class="bounce" />
+        v-bind:style="customStyles" class="bounce" aria-hidden="true" />
       <!-- Small icon, showing opening method on hover -->
       <ItemOpenMethodIcon class="opening-method-icon"
         :isSmall="!itemIcon || size === 'small'"

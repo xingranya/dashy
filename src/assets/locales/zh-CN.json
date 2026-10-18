@@ -13,8 +13,8 @@
     "sign-in-again": "重新登录"
   },
   "search": {
-    "search-label": "搜索",
-    "search-placeholder": "输入以筛选",
+    "search-label": "搜索工具",
+    "search-placeholder": "搜索工具名称、用途或网址",
     "clear-search-tooltip": "清空搜索",
     "enter-to-search-web": "点击回车搜索",
     "enter-to-open-url": "按回车键打开网址",

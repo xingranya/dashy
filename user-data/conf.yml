@@ -1,12 +1,12 @@
 # 新增工具：在下面对应分类的 items 下追加一项；空分类先把 items: [] 改成 items:。
 # title 是工具标题，description 是一句话说明，url 填完整的真实访问地址。
-# icon 可填 emoji（如 📝）、完整图片地址或 Font Awesome 图标名（如 fas fa-chart-line）。
+# icon 可填内置图标文件名（如 seeway-dbx.svg）、完整图片地址或 Font Awesome 图标名。
 # 保留每层两个空格的缩进，不使用 Tab；下面是注释示例，替换地址后再启用：
 #     items:
 #       - title: 数据看板
 #         description: 查看日常经营数据
 #         url: https://tools.example.com
-#         icon: '📝'
+#         icon: seeway-dbx.svg
 # 在 GitHub 的 seeway-custom 分支编辑并提交本文件，再重新构建、部署后生效。
 ---
 pageInfo:
@@ -19,7 +19,8 @@ pageInfo:
 
 appConfig:
   language: zh-CN
-  theme: minimal-light
+  theme: seeway
+  cssThemes: [seeway]
   layout: auto
   iconSize: medium
   colCount: 3
@@ -36,45 +37,6 @@ appConfig:
     hideNav: true
   webSearch:
     disableWebSearch: true
-  customColors:
-    minimal-light:
-      primary: '#0ea5e9'
-      foreground: '#233044'
-      background: '#f6f8fa'
-      background-darker: '#ffffff'
-      heading-text-color: '#233044'
-      item-text-color: '#233044'
-      item-group-heading-text-color: '#233044'
-      item-group-heading-text-color-hover: '#036b99'
-      settings-text-color: '#233044'
-      item-background: '#ffffff'
-      item-background-hover: '#edf7fc'
-      search-field-background: '#ffffff'
-      outline-color: '#dbe3e9'
-      footer-background: '#f6f8fa'
-      font-body: 'system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'
-      font-headings: 'system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'
-  customCss: |
-    #dashy { min-height: 100dvh; display: flex; flex-direction: column; }
-    #dashy > header { padding: 1.5rem max(1rem, calc((100% - 1120px) / 2)); }
-    #dashy .page-titles { gap: 1rem; }
-    #dashy .site-logo { width: 11rem; max-width: 11rem; margin: 0; }
-    #dashy .page-titles h1 { font-size: 1.65rem; }
-    #dashy .subtitle { font-style: normal; text-shadow: none; color: #596779; opacity: 1; }
-    #dashy .home { flex: 1; min-height: 0; padding: 0 1rem 2rem; }
-    #dashy .settings-outer { max-width: 1120px; margin: 1rem auto 1.5rem; background: none; border: 0; box-shadow: none; }
-    #dashy form.normal { display: flex; align-items: center; width: min(100%, 36rem); background: none; padding: 0; }
-    #dashy .search-wrap { min-width: 0; }
-    #dashy #filter-tiles { box-sizing: border-box; width: 100%; min-height: 2.75rem; margin: 0; font: inherit; }
-    #dashy #filter-tiles:focus-visible { outline: 2px solid #036b99; outline-offset: 2px; }
-    #dashy .item-group-container { width: 100%; max-width: 1120px; gap: 1rem; overflow: visible; }
-    #dashy .collapsable { margin: 0; padding: 1rem; background: #fff; border: 1px solid #dbe3e9; border-radius: 10px; }
-    #dashy .section-header h3 { font-size: 1.1rem; }
-    #dashy .section-header .header-action { display: none; }
-    #dashy .no-items { color: #596779; font-size: 0.95rem; padding: 1.25rem 0; }
-    #dashy .item.size-medium .tile-title { max-width: none; }
-    #dashy footer { box-sizing: border-box; width: 100%; padding: 1rem; margin: 0; color: #596779; opacity: 1; }
-    @media (max-width: 599px) { #dashy .page-titles { gap: 0.25rem; } #dashy > header { padding: 1rem; } }
 
 sections:
   - name: 数据与问数
@@ -82,24 +44,24 @@ sections:
       - title: DBX
         description: 数据库查询与数据管理
         url: https://dbx.seeway.co/
-        icon: '🗄️'
+        icon: seeway-dbx.svg
   - name: 采集与运维
     items:
       - title: AI 中转站
         description: 公司 AI 模型服务与用量管理
         url: https://ai.seeway.co/
-        icon: '🔌'
+        icon: seeway-ai.svg
   - name: 文档与知识库
     items:
       - title: 见外知识库
         description: 检索资料、知识问答与文档管理
         url: https://know.seeway.co/
-        icon: '📚'
+        icon: seeway-knowledge.svg
       - title: 见外官网
         description: 公司介绍、服务与案例
         url: https://seeway.co/
-        icon: '🌐'
+        icon: seeway-website.svg
       - title: 工具清单
         description: 维护工具名称与访问地址
         url: https://github.com/xingranya/dashy/edit/seeway-custom/user-data/conf.yml
-        icon: '📝'
+        icon: seeway-list.svg

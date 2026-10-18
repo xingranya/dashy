@@ -1,12 +1,149 @@
-// Put your custom themes here.
-// Don't forget to also put your theme name into the config
-// E.g: appConfig: cssThemes: [ 'my-theme' ]
+/* 见外内部门户：统一字阶、目录布局与工具入口状态。 */
+html[data-theme='seeway'] {
+  --primary: #096b95;
+  --foreground: #182432;
+  --background: #fff;
+  --background-darker: #fff;
+  --font-body: system-ui, -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --font-headings: var(--font-body);
+  --heading-text-color: var(--foreground);
+  --settings-text-color: var(--foreground);
+  --item-text-color: var(--foreground);
+  --item-text-color-hover: var(--foreground);
+  --item-group-heading-text-color: #516172;
+  --item-group-background: transparent;
+  --item-group-outer-background: transparent;
+  --item-background: transparent;
+  --item-background-hover: #f5f8fa;
+  --item-shadow: none;
+  --item-hover-shadow: none;
+  --item-group-shadow: none;
+  --outline-color: #e3e8ed;
+  --medium-grey: #647181;
+  --description-tooltip-background: #fff;
+  --description-tooltip-color: #182432;
+  --footer-background: #fff;
+  --curve-factor: 12px;
+  --scroll-bar-color: #c1cbd3;
+  --scroll-bar-background: #fff;
+  --highlight-background: #dceef6;
+  --highlight-color: #182432;
 
-// Example theme:
-// html[data-theme='my-theme'] {
-//   --primary: #00CCB4;
-//   --background: #141b33;
-//   --background-darker: #060913;
-// }
+  #dashy { min-height: 100dvh; display: flex; flex-direction: column; }
+  #dashy > header, .home, footer { box-sizing: border-box; width: min(1120px, calc(100% - 64px)); margin-inline: auto; }
+  #dashy > header { padding: 3rem 0 2rem; background: transparent; }
+  .page-titles { width: 100%; justify-content: space-between; gap: 2rem; overflow: visible; }
+  .page-titles .text { order: 1; }
+  .page-titles .site-logo { order: 2; width: 11rem; max-width: 11rem; height: auto; margin: 0; }
+  .page-titles h1 { font-size: 2.25rem; font-weight: 650; letter-spacing: -0.035em; line-height: 1.25; }
+  .page-titles .subtitle { display: block; margin-top: 0.75rem; font-size: 0.95rem; font-style: normal; text-shadow: none; color: var(--medium-grey); opacity: 1; }
+  .home { flex: 1; min-height: 0; padding-bottom: 2.5rem; }
 
-// For more info, see: https://github.com/Lissy93/dashy/blob/master/docs/theming.md
+  section.settings-outer { margin: 0 0 2.75rem; border: 0; background: none; box-shadow: none; }
+  form.normal {
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: min(100%, 36rem);
+    padding: 0 0.75rem 0 1.25rem;
+    background: #f5f7f9;
+    border: 1px solid #e3e8ed;
+    border-radius: 12px;
+    transition: border-color 160ms ease, box-shadow 160ms ease;
+    &::before {
+      content: '';
+      flex: 0 0 20px;
+      height: 20px;
+      margin-right: 0.75rem;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23546475' stroke-width='1.7' stroke-linecap='round'%3E%3Ccircle cx='10.5' cy='10.5' r='6.5'/%3E%3Cpath d='m16 16 4.5 4.5'/%3E%3C/svg%3E") center / contain no-repeat;
+    }
+    &:focus-within { border-color: var(--primary); box-shadow: 0 0 0 3px #e4f1f7; }
+    label { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; clip-path: inset(50%); overflow: hidden; }
+    .search-wrap { flex: 1; min-width: 0; }
+    #filter-tiles { box-sizing: border-box; width: 100%; height: 3.25rem; margin: 0; padding: 0.75rem 0; border: 0; background: transparent; font: inherit; font-size: 0.95rem; caret-color: var(--primary); opacity: 1; }
+    #filter-tiles::placeholder { color: #5c6b7a; opacity: 1; }
+    .web-search-note { position: absolute; left: 0; top: calc(100% + 0.5rem); margin: 0; color: var(--medium-grey); font-size: 0.75rem; opacity: 1; }
+    .clear-search { display: grid; place-items: center; flex: 0 0 2.75rem; height: 2.75rem; padding: 0; margin: 0; border: 0; border-radius: 8px; background: transparent; color: #516172; opacity: 1; }
+    .clear-search:hover { background: #e7edf2; }
+    .clear-search:focus-visible { outline: 2px solid var(--primary); outline-offset: -3px; }
+  }
+
+  .home .item-group-container { display: block; width: 100%; max-width: none; overflow: visible; }
+  .collapsable {
+    display: grid;
+    grid-template-columns: 11rem minmax(0, 1fr);
+    gap: 2rem;
+    width: 100%;
+    margin: 0;
+    padding: 1rem 0;
+    border-radius: 0;
+    border-top: 1px solid var(--outline-color);
+    background: transparent;
+    box-shadow: none;
+  }
+  .section-header { align-self: start; padding: 1.5rem 0; }
+  .section-header h3 { flex: 0 1 auto; font-size: 1rem; font-weight: 600; line-height: 1.5; }
+  .section-header .collapse-toggle { order: 2; width: 2rem; height: 2rem; margin-left: 0.5rem; }
+  .section-header .collapse-toggle:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+  .section-header .header-action { display: none; }
+  .collapsible-content { background: transparent; border-radius: 0; }
+  .collapsible-content .content-inner { padding: 0; }
+  .there-are-items.inner-size-medium { display: block; }
+  .item-wrapper { display: block; }
+  .item.size-medium {
+    display: grid;
+    grid-template-columns: 3rem minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 1rem;
+    min-height: 6rem;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 1.25rem 3.25rem 1.25rem 1rem;
+    border: 0;
+    border-bottom: 1px solid #edf0f3;
+    border-radius: 0;
+    text-align: left;
+    transition: background-color 160ms ease;
+    &:focus-visible { outline: 2px solid var(--primary); outline-offset: -2px; }
+    .item-icon { grid-column: 1; grid-row: 1; display: grid; place-items: center; width: 3rem; height: 3rem; border-radius: 12px; background: #f1f5f7; }
+    .tile-icon { width: 1.5rem; height: 1.5rem; margin: 0; padding: 0; filter: none; }
+    .tile-title { grid-column: 2; grid-row: 1; display: block; height: auto; max-width: none; padding: 0; white-space: normal; overflow: visible; }
+    .tile-title .text { font-size: 1.05rem; font-weight: 600; line-height: 1.4; white-space: normal; overflow-wrap: anywhere; }
+    .description { display: block; margin: 0.4rem 0 0; color: var(--medium-grey); font-size: 0.85rem; line-height: 1.5; white-space: normal; }
+    .item-url { grid-column: 3; grid-row: 1; display: block; margin: 0 0 0 1rem; color: #647181; font-size: 0.75rem; }
+    .opening-method-icon { display: block; }
+    .opening-method-icon svg { top: 50%; right: 1.1rem; bottom: auto; width: 0.8rem; height: 0.8rem; margin: 0; transform: translateY(-50%); opacity: 0.45; }
+    &:hover .item-icon { background: #e5f2f8; }
+    &:hover .opening-method-icon svg { color: var(--primary); opacity: 1; }
+  }
+  .item-wrapper:last-child .item { border-bottom: 0; }
+  .no-items { width: auto; padding: 1.5rem 1rem; margin: 0; text-align: left; color: var(--medium-grey); font-size: 0.9rem; }
+  .no-data { border: 0; background: #f5f7f9; color: #516172; font-size: 1rem; padding: 1.25rem; }
+  footer { padding: 1.25rem 0; margin-top: 0; border-top: 1px solid var(--outline-color); color: var(--medium-grey); font-size: 0.75rem; text-align: left; opacity: 1; }
+
+  @media (max-width: 900px) {
+    .collapsable { grid-template-columns: 9rem minmax(0, 1fr); gap: 1rem; }
+    .item.size-medium .item-url { display: none; }
+  }
+  @media (max-width: 599px) {
+    #dashy > header, .home, footer { width: calc(100% - 40px); }
+    #dashy > header { padding: 1.75rem 0 1.5rem; }
+    .page-titles { flex-direction: column; align-items: flex-start; gap: 1.25rem; padding: 0; text-align: left; }
+    .page-titles .site-logo { order: 0; width: 9rem; max-width: 9rem; margin-left: -0.95rem; }
+    .page-titles h1 { font-size: 1.8rem; }
+    .page-titles .subtitle { margin-top: 0.5rem; font-size: 0.85rem; }
+    section.settings-outer { margin-bottom: 2.25rem; }
+    .collapsable { display: block; padding: 0.5rem 0 1rem; }
+    .section-header { padding: 0.75rem 0 0.5rem; }
+    .section-header h3 { font-size: 0.9rem; }
+    .item.size-medium { grid-template-columns: 2.75rem minmax(0, 1fr); min-height: 5.75rem; padding: 1rem 2.25rem 1rem 0.5rem; gap: 0.75rem; }
+    .item.size-medium .item-icon { width: 2.75rem; height: 2.75rem; }
+    .item.size-medium .tile-title .text { font-size: 1rem; }
+    .item.size-medium .description { font-size: 0.8rem; }
+    .item.size-medium .opening-method-icon svg { right: 0.5rem; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .item, form.normal, .collapsible-content { transition: none; }
+  }
+}
