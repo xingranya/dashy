@@ -78,11 +78,27 @@ appConfig:
 
 sections:
   - name: 数据与问数
-    items: []
+    items:
+      - title: DBX
+        description: 数据库查询与数据管理
+        url: https://dbx.seeway.co/
+        icon: '🗄️'
   - name: 采集与运维
-    items: []
+    items:
+      - title: AI 中转站
+        description: 公司 AI 模型服务与用量管理
+        url: https://ai.seeway.co/
+        icon: '🔌'
   - name: 文档与知识库
     items:
+      - title: 见外知识库
+        description: 检索资料、知识问答与文档管理
+        url: https://know.seeway.co/
+        icon: '📚'
+      - title: 见外官网
+        description: 公司介绍、服务与案例
+        url: https://seeway.co/
+        icon: '🌐'
       - title: 工具清单
         description: 维护工具名称与访问地址
         url: https://github.com/xingranya/dashy/edit/seeway-custom/user-data/conf.yml
