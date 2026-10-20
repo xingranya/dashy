@@ -61,7 +61,3 @@ sections:
         description: 公司介绍、服务与案例
         url: https://seeway.co/
         icon: seeway-website.svg
-      - title: 工具清单
-        description: 维护工具名称与访问地址
-        url: https://github.com/xingranya/dashy/edit/seeway-custom/user-data/conf.yml
-        icon: seeway-list.svg
